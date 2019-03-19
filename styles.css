@@ -1,0 +1,47 @@
+
+.topnav {
+  background-color: #D3D3D3;
+  overflow: hidden;
+  text-align: right;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+}
+
+/* for color link */
+a:hover {
+  color: #F8F8F8;
+}
+
+.fitness {
+position: fixed;
+top: 50%;
+left: 50%;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -100;
+-ms-transform: translateX(-50%) translateY(-50%);
+-moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+background-size: cover;
+}
+
+
+.run {
+  padding: 25px;
+  width: 1300px;
+  height: 650px;
+}
