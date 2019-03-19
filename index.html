@@ -4,12 +4,20 @@
 <head>
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
     <title>Community calculator</title>
 </head>
 
 <body>
-    this is a calculator
+    Units<select id="unit">
+        <option>Pound-Feet</option>
+        <option>Kg-Meters</option>
+    </select><br>
+    <label id="peso">Pounds</label><input id="weight" type="text"><br>
+    <label id="altura">Feet(s)</label><input id="height" type="text"><br>
+    <label id="altura2">Inch(es)</label><input id="height2" type="text"><br>
+    <label>Your BMI</label><p id="result"></p><br>
+    <button id="bmi">Get BMI</button>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

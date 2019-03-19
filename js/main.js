@@ -11,4 +11,33 @@ $(document).ready(function () {
     var lbs = 0.453592; // value of punds in kilos
     var feetInch = 12; // 1 feet = to 12 inches
     var inch = 0.0833333; // value of 1 inch in feets
+
+    $("#unit").change(function () {
+        var unit = $("#unit").val();
+        if (unit === "Pound-Feet") {
+            $("#peso").html("Pounds");
+            $("#altura").html("Feet(s)");
+            $("#altura2").html("Inch(es)");
+        } else if (unit === "Kg-Meters") {
+            $("#peso").html("Kilograms");
+            $("#altura").html("Meter(s)");
+            $("#altura2").html("Centimer(s)");
+        }
+    });
+    $("#bmi").click(function () {
+        var unit = $("#unit").val();
+        var height = parseInt($("#height").val());
+        var height2 = parseInt($("#height2").val());
+        var weight = parseInt($("#weight").val());
+        if (unit === "Pound-Feet") {
+            var tInch = (height * 12) + height2;
+            var bmi = 703 * (weight / (tInch * tInch));
+            $("#result").html(bmi);
+        } else{
+            var tHeight=height+(height2/100);
+            console.log(height2);
+            var bmi = weight/(tHeight*tHeight);
+            $("#result").html(bmi);
+        }
+    });
 });
