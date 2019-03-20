@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 .topnav {
-  background-color: #D3D3D3;
+  background-color: #3AA655;
   overflow: hidden;
   text-align: right;
 }
 
+
 .topnav a {
+  font-weight: 100;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
   float: left;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -24,24 +29,170 @@ a:hover {
 }
 
 .fitness {
-position: fixed;
-top: 50%;
-left: 50%;
-min-width: 100%;
-min-height: 100%;
-width: auto;
-height: auto;
-z-index: -100;
--ms-transform: translateX(-50%) translateY(-50%);
--moz-transform: translateX(-50%) translateY(-50%);
--webkit-transform: translateX(-50%) translateY(-50%);
-transform: translateX(-50%) translateY(-50%);
-background-size: cover;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
 }
 
+
+
+.here {
+  border-radius: 4px;
+  background-color: #00cc66;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.here span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.here span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.here:hover span {
+  padding-right: 25px;
+}
+
+.here:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#unit {
+  background-color: white;
+  border: none;
+  color: #47d147;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+  column-count: 2;
+}
+
+.peso {
+  background-color: #47d147;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
 .run {
   padding: 25px;
   width: 1300px;
   height: 650px;
+}
+
+main {
+  position: relative;
+  display: flex;
+}
+
+#container1 {
+    float:left;
+    width:100%;
+    background: white;
+    position:relative;
+    right:50%;
+    margin: 20px;
+}
+
+#col1 {
+    float:left;
+    width:36%;
+    position:relative;
+    left:50%;
+    overflow:hidden;
+}
+#col2 {
+  text-align: center;
+   border: 1px solid white;
+    float:left;
+    width:36%;
+    position:relative;
+    left:70%;
+    overflow:hidden;
+}
+
+.bmi1 {
+  font-size: 20px;
+}
+
+.bmi2 {
+  font-size: 20px;
+}
+
+.bmi3 {
+  background-color: green;
+  border: 2px solid white;
+  padding: 10px 50px;
+  margin: 5px;
+  color: white;
+  font-size: 15px;
+   animation-name: rainbow;
+   animation-duration: 6s;
+   animation-iteration-count: infinite;
+  }
+  @keyframes rainbow {
+     0%{
+     background-color: white;
+     top: 0px;
+     left: 0px;
+     }
+     50%{
+       background-color: #008c73;
+       top:50px;
+       left: 50px;
+       opacity: 0.2;
+     }
+  100% {
+    background-color: green;
+    top: 0px;
+    left:-25px;
+  }
+}
+
+.label1{
+  color: green;
+  font-size: 25px;
+}
+
+
+
+.green {
+  color: green;
 }
