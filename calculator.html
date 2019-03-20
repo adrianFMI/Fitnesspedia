@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>repl.it</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
 
-  </head>
+</head>
 
 <body background="fit.jpg" class="fitness">
-<header>
-  <div class="topnav">
-    <a href="index.html">Home</a>
-    <a href="calculator.html"> Calculator</a>
-    <a href="blog.html"> Blog </a>
-      <a href="about.html"> About </a>
-    <a href="contact.html"> Contact us </a>
-  </div>
-  <div align="center" >
+    <header>
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a href="calculator.html"> Calculator</a>
+            <a href="blog.html"> Blog </a>
+            <a href="about.html"> About </a>
+            <a href="contact.html"> Contact us </a>
+        </div>
+    </header>
 
+    <div style="background-color: aliceblue">
+        <label>Gender</label><select id="gender">
+            <option>Male</option>
+            <option>female</option>
+        </select><br />
+        <input type="number" min="12" max="100" placeholder="edad 12-100"><br />
+        <label>Height</label><select id="metric">
+            <option>Feet-pound</option>
+            <option>Meter-KG</option>
+        </select><br />
+        <label>Feet(s)</label><input type="text"><label>Inch(es)</label><input type="text"><br />
+        <label>Food</label><select></select><button>Add</button><label>Total calories</label><label style="background-color: aqua">-</label><br>
+        <label>Exercise</label><select></select><label>Hour(s)</label><select></select><br>
+        <button>Submit</button><br/>
+        <label>Days</label>
+        <p></p>
+    </div>
+    <section>
+        <hr>
+        <div align="center">
 
-  </header>
-
-<section>
-  <hr>
-  <div align="center" >
-
- </div>
-</section>
-
-
-  <script src="jquery-3.3.1.min.js"> </script>
-   <script src="script.js"></script>
+        </div>
+    </section>
+    <script src="js/jquery-3.3.1.min.js"> </script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -40,4 +40,8 @@ $(document).ready(function () {
             $("#result").html(bmi);
         }
     });
+    //men 10(weight kg)+6.25(height cm) - 5(edad) +5
+    //women 10(weight kg)+6.25(height cm) - 5(edad) -161
+    
+    
 });
