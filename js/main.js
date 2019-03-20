@@ -13,14 +13,19 @@ $(document).ready(function () {
     var inch = 0.0833333; // value of 1 inch in feets
     var foods = ["Apple(4oz)", "Banana(6oz.)", "Orange(4oz.)", "Cucumber(4oz)", "Carrots(1cup)", "Brocolli(1cup)", "Beef(2oz.)", "Chicken(2oz.)", "Pizza(slice)", "Beer(1can)", "Coke(1can)"];
     var exercises = ["Walk", "Swimming", "Running", "Bicycling", "Football", "Basketball", "Soccer"];
-    for (var i = 0; i < foods.length; i++) {//fills the option for food dropmenu
+    var hours = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (var i = 0; i < foods.length; i++) { //fills the option for food dropmenu
         $("#food").append(`<option>${foods[i]}</option>`);
     }
-    for (var x = 0; x < exercises.length; x++) {//fill the options for exercise dropmenu
+    for (var x = 0; x < exercises.length; x++) { //fill the options for exercise dropmenu
         $("#exercise").append(`<option>${exercises[x]}</option>`);
     }
+    for (var n = 0; n < hours.length; n++) { //fill the options for exercise dropmenu
+        $("#number").append(`<option>${hours[n]}</option>`);
+    }
 
-    $("#unit").change(function () {//Change the value of  metric units in thelabels for BMI
+
+    $("#unit").change(function () { //Change the value of  metric units in thelabels for BMI
         var unit = $("#unit").val();
         if (unit === "Pound-Feet") {
             $("#peso").html("Pounds");
@@ -32,7 +37,7 @@ $(document).ready(function () {
             $("#altura2").html("Centimer(s)");
         }
     });
-    $("#bmi").click(function () {//calculates your BMI depending the metric units you use
+    $("#bmi").click(function () { //calculates your BMI depending the metric units you use
         var unit = $("#unit").val();
         var height = parseInt($("#height").val());
         var height2 = parseInt($("#height2").val());
@@ -50,7 +55,7 @@ $(document).ready(function () {
     });
     //men 10(weight kg)+6.25(height cm) - 5(edad) +5  formulas to calculate right amount of calories for men and women
     //women 10(weight kg)+6.25(height cm) - 5(edad) -161
-    $("#metric").change(function () {//Change the value for metric units for the label in the weight calculator
+    $("#metric").change(function () { //Change the value for metric units for the label in the weight calculator
         var metricUnit = $("#metric").val();
         if (metricUnit === "Feet-pound") {
             $("#valWeight").html("Pounds");
@@ -62,14 +67,52 @@ $(document).ready(function () {
             $("#valHeight2").html("Centimeter(s)");
         }
     });
-    $("#add").click(function () {//adds and calculate the amount of calories you eat
-        var inFood = $("#foof").val();
-        if (inFood==="Apple(4oz)") {
-
+    var totalCal = $("#totalCal");
+    var tCals = 0;
+    console.log(totalCal);
+    $("#add").click(function () { //adds and calculate the amount of calories you eat
+        var inFood = $("#food").val();
+        if (inFood === "Apple(4oz)") {
+            tCals = tCals + 59;
+            totalCal.html(" " + tCals);
+        } else if (inFood === "Banana(6oz.)") {
+            tCals = tCals + 151;
+            totalCal.html(" " + tCals);
+        } else if (inFood === "Orange(4oz.)") {
+            tCals = tCals + 53;
+            totalCal.html(" " + tCals);
+        } else if (inFood === "Cucumber(4oz)") {
+            tCals = tCals + 17;
+            totalCal.html(" " + tCals);
+        } else if (inFood === "Carrots(1cup)") {
+            tCals = tCals + 50;
+            totalCal.html(" " + tCals);
+        } else if (inFood === "Brocolli(1cup)") {
+            tCals = tCals + 45;
+            totalCal.html(" " + tCals);
+        } else if (inFood === "Beef(2oz.)") {
+            tCals = tCals + 142;
+            totalCal.html(" " + tCals);
+        } else if (inFood === "Chicken(2oz.)") {
+            tCals = tCals + 136;
+            totalCal.html(" " + tCals);
+        } else if (inFood === "Pizza(slice)") {
+            tCals = tCals + 285;
+            totalCal.html(" " + tCals);
+        } else if (inFood === "Beer(1can)") {
+            tCals = tCals + 154;
+            totalCal.html(" " + tCals);
+        } else if (inFood === "Coke(1can)") {
+            tCals = tCals + 150;
+            totalCal.html(" " + tCals);
         }
     });
-    $("#submit2").click(function () {//Calculate the amount of days you require to lose the amount of weight you want
+    $("#submit2").click(function () { //Calculate the amount of days you require to lose the amount of weight you want
         var gender = $("#gender").val();
-        console.log(gender);
+        if (gender === "Female") {
+
+        } else if (gender === "Male") {
+
+        }
     });
 });
