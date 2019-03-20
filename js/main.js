@@ -114,16 +114,52 @@ $(document).ready(function () {
         var secondUnit = parseInt($("#secondHeight").val());
         var actWeight = parseInt($("#inWeight").val());
         var age = $("#age").val();
+        var getExercise = $("#exercise").val();
+        var getHours = parseInt($("#number").val());
         var calPerson = 0;
         if (gender === "Male") {
             if (mUnits === "Feet-pound") {
+                var burnCal = 0;
+                if (getExercise === "Walk") {
+                    burnCal = 267 * getHours;
+                } else if (getExercise === "Swimming") {
+                    burnCal = (492 * getHours);
+                } else if (getExercise === "Running") {
+                    burnCal = 773 * getHours;
+                } else if (getExercise === "Bicycling") {
+                    burnCal = 562 * getHours;
+                } else if (getExercise === "Football") {
+                    burnCal = 494 * getHours;
+                } else if (getExercise === "Basketball") {
+                    burnCal = 422 * getHours;
+                } else if (getExercise === "Soccer") {
+                    burnCal = 492 * getHours;
+                }
                 var conToKilo = actWeight * lbs;
                 var conToInch = actHeight * feetInch;
                 var tInch = conToInch + secondUnit;
                 var conToCms = tInch * 2.54;
                 calPerson = (10 * conToKilo) + (6.25 * conToCms) - (5 * age) + 5;
                 console.log(calPerson);
+
+
             } else if (mUnits === "Meter-KG") {
+                var burnCal = 0;
+                if (getExercise === "Walk") {
+                    burnCal = 267 * getHours;
+                } else if (getExercise === "Swimming") {
+                    burnCal = (492 * getHours);
+                } else if (getExercise === "Running") {
+                    burnCal = 773 * getHours;
+                } else if (getExercise === "Bicycling") {
+                    burnCal = 562 * getHours;
+                } else if (getExercise === "Football") {
+                    burnCal = 494 * getHours;
+                } else if (getExercise === "Basketball") {
+                    burnCal = 422 * getHours;
+                } else if (getExercise === "Soccer") {
+                    burnCal = 492 * getHours;
+                }
                 var tcms = (actHeight * 100) + secondUnit;
                 calPerson = (10 * actWeight) + (6.25 * tcms) - (5 * age) + 5;
                 console.log(calPerson);
@@ -131,6 +167,22 @@ $(document).ready(function () {
 
         } else if (gender === "Female") {
             if (mUnits === "Feet-pound") {
+                var burnCal = 0;
+                if (getExercise === "Walk") {
+                    burnCal = 267 * getHours;
+                } else if (getExercise === "Swimming") {
+                    burnCal = (492 * getHours);
+                } else if (getExercise === "Running") {
+                    burnCal = 773 * getHours;
+                } else if (getExercise === "Bicycling") {
+                    burnCal = 562 * getHours;
+                } else if (getExercise === "Football") {
+                    burnCal = 494 * getHours;
+                } else if (getExercise === "Basketball") {
+                    burnCal = 422 * getHours;
+                } else if (getExercise === "Soccer") {
+                    burnCal = 492 * getHours;
+                }
                 var conToKilo = actWeight * lbs;
                 var conToInch = actHeight * feetInch;
                 var tInch = conToInch + secondUnit;
@@ -138,6 +190,22 @@ $(document).ready(function () {
                 calPerson = (10 * conToKilo) + (6.25 * conToCms) - (5 * age) - 161;
                 console.log(calPerson);
             } else if (mUnits === "Meter-KG") {
+                var burnCal = 0;
+                if (getExercise === "Walk") {
+                    burnCal = 267 * getHours;
+                } else if (getExercise === "Swimming") {
+                    burnCal = (492 * getHours);
+                } else if (getExercise === "Running") {
+                    burnCal = 773 * getHours;
+                } else if (getExercise === "Bicycling") {
+                    burnCal = 562 * getHours;
+                } else if (getExercise === "Football") {
+                    burnCal = 494 * getHours;
+                } else if (getExercise === "Basketball") {
+                    burnCal = 422 * getHours;
+                } else if (getExercise === "Soccer") {
+                    burnCal = 492 * getHours;
+                }
                 var tcms = (actHeight * 100) + secondUnit;
                 calPerson = (10 * actWeight) + (6.25 * tcms) - (5 * age) - 161;
                 console.log(calPerson);
