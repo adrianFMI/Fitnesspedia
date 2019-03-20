@@ -53,8 +53,6 @@ $(document).ready(function () {
             $("#result").html(bmi);
         }
     });
-    //men 10(weight kg)+6.25(height cm) - 5(edad) +5  formulas to calculate right amount of calories for men and women
-    //women 10(weight kg)+6.25(height cm) - 5(edad) -161
     $("#metric").change(function () { //Change the value for metric units for the label in the weight calculator
         var metricUnit = $("#metric").val();
         if (metricUnit === "Feet-pound") {
@@ -107,12 +105,43 @@ $(document).ready(function () {
             totalCal.html(" " + tCals);
         }
     });
+    //men 10(weight kg)+6.25(height cm) - 5(edad) +5  formulas to calculate right amount of calories for men and women
+    //women 10(weight kg)+6.25(height cm) - 5(edad) -161
     $("#submit2").click(function () { //Calculate the amount of days you require to lose the amount of weight you want
         var gender = $("#gender").val();
-        if (gender === "Female") {
+        var mUnits = $("#metric").val();
+        var actHeight = parseInt($("#inHeight").val());
+        var secondUnit = parseInt($("#secondHeight").val());
+        var actWeight = parseInt($("#inWeight").val());
+        var age = $("#age").val();
+        var calPerson = 0;
+        if (gender === "Male") {
+            if (mUnits === "Feet-pound") {
+                var conToKilo = actWeight * lbs;
+                var conToInch = actHeight * feetInch;
+                var tInch = conToInch + secondUnit;
+                var conToCms = tInch * 2.54;
+                calPerson = (10 * conToKilo) + (6.25 * conToCms) - (5 * age) + 5;
+                console.log(calPerson);
+            } else if (mUnits === "Meter-KG") {
+                var tcms = (actHeight * 100) + secondUnit;
+                calPerson = (10 * actWeight) + (6.25 * tcms) - (5 * age) + 5;
+                console.log(calPerson);
+            }
 
-        } else if (gender === "Male") {
-
+        } else if (gender === "Female") {
+            if (mUnits === "Feet-pound") {
+                var conToKilo = actWeight * lbs;
+                var conToInch = actHeight * feetInch;
+                var tInch = conToInch + secondUnit;
+                var conToCms = tInch * 2.54;
+                calPerson = (10 * conToKilo) + (6.25 * conToCms) - (5 * age) - 161;
+                console.log(calPerson);
+            } else if (mUnits === "Meter-KG") {
+                var tcms = (actHeight * 100) + secondUnit;
+                calPerson = (10 * actWeight) + (6.25 * tcms) - (5 * age) - 161;
+                console.log(calPerson);
+            }
         }
     });
 });
