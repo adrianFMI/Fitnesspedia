@@ -119,7 +119,7 @@ $(document).ready(function () {
         var calPerson = 0;
         if (gender === "Male") {
             if (mUnits === "Feet-pound") {
-                var burnCal = 0;
+                var burnCal = 0; //Amount of calories a person use per exercise
                 if (getExercise === "Walk") {
                     burnCal = 267 * getHours;
                 } else if (getExercise === "Swimming") {
@@ -139,12 +139,9 @@ $(document).ready(function () {
                 var conToInch = actHeight * feetInch;
                 var tInch = conToInch + secondUnit;
                 var conToCms = tInch * 2.54;
-                calPerson = (10 * conToKilo) + (6.25 * conToCms) - (5 * age) + 5;
-                console.log(calPerson);
-
-
+                calPerson = (10 * conToKilo) + (6.25 * conToCms) - (5 * age) + 5; //Amount a calories a men need without do exercise
             } else if (mUnits === "Meter-KG") {
-                var burnCal = 0;
+                var burnCal = 0; //Amount of calories a person use per exercise
                 if (getExercise === "Walk") {
                     burnCal = 267 * getHours;
                 } else if (getExercise === "Swimming") {
@@ -161,13 +158,12 @@ $(document).ready(function () {
                     burnCal = 492 * getHours;
                 }
                 var tcms = (actHeight * 100) + secondUnit;
-                calPerson = (10 * actWeight) + (6.25 * tcms) - (5 * age) + 5;
-                console.log(calPerson);
+                calPerson = (10 * actWeight) + (6.25 * tcms) - (5 * age) + 5; //Amount a calories a men need without do exercise
             }
 
         } else if (gender === "Female") {
             if (mUnits === "Feet-pound") {
-                var burnCal = 0;
+                var burnCal = 0; //Amount of calories a person use per exercise
                 if (getExercise === "Walk") {
                     burnCal = 267 * getHours;
                 } else if (getExercise === "Swimming") {
@@ -187,10 +183,9 @@ $(document).ready(function () {
                 var conToInch = actHeight * feetInch;
                 var tInch = conToInch + secondUnit;
                 var conToCms = tInch * 2.54;
-                calPerson = (10 * conToKilo) + (6.25 * conToCms) - (5 * age) - 161;
-                console.log(calPerson);
+                calPerson = (10 * conToKilo) + (6.25 * conToCms) - (5 * age) - 161; //Amount a calories a women need without do exercise
             } else if (mUnits === "Meter-KG") {
-                var burnCal = 0;
+                var burnCal = 0; //Amount of calories a person use per exercise
                 if (getExercise === "Walk") {
                     burnCal = 267 * getHours;
                 } else if (getExercise === "Swimming") {
@@ -207,9 +202,29 @@ $(document).ready(function () {
                     burnCal = 492 * getHours;
                 }
                 var tcms = (actHeight * 100) + secondUnit;
-                calPerson = (10 * actWeight) + (6.25 * tcms) - (5 * age) - 161;
-                console.log(calPerson);
+                calPerson = (10 * actWeight) + (6.25 * tcms) - (5 * age) - 161; //Amount a calories a women need without do exercise
+            }
+        }
+        var showResults = $("#goalDays");
+        var intake = tCals - (calPerson + burnCal); //total of calories a person get by day
+        var dweight = parseInt($("#dWeight").val());
+        var weightToLose = actWeight - dweight;
+        if (intake > 0) {
+            showResults.html(`You are going to get ${intake.toFixed(2)} calories per day`);
+        } else {
+            if (mUnits === "Feet-pound") {
+                var topositiveIntake = Math.abs(intake);
+                var wlConPunds = weightToLose / kilo;//conversion of pounds to kilos
+                var calToKilos = topositiveIntake / kg;
+                var daysToGoal = wlConPunds / calToKilos;
+                showResults.html(`You will your ideal weight in ${Math.round(daysToGoal)} days`);
+            } else if (mUnits === "Meter-KG") {
+                var topositiveIntake = Math.abs(intake);
+                var calToKilos = topositiveIntake / kg;
+                var daysToGoal = weightToLose / calToKilos;
+                showResults.html(`You will your ideal weight in ${Math.round(daysToGoal)} days`);
             }
         }
     });
+    //reset button
 });
