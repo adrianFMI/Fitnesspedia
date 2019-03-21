@@ -121,6 +121,13 @@ main {
   position: relative;
   display: flex;
 }
+#container2 {
+    float:left;
+    width:100%;
+    position:relative;
+    right:30%;
+}
+
 
 #container1 {
     float:left;
@@ -147,6 +154,7 @@ main {
     left:70%;
     overflow:hidden;
 }
+
 
 .bmi1 {
   font-size: 20px;
@@ -195,4 +203,86 @@ main {
 
 .green {
   color: green;
+}
+
+.box1 {
+  background-color:  white;
+  font-size: 20px;
+  box-sizing: border-box;
+  width: 550px;
+   height: auto;
+   padding: 25px;
+   border: 1px solid red;
+}
+
+ #age {
+   background-color: white;
+   border: none;
+   color: #47d147;
+   padding: 5px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 22px;
+   margin: 2px;
+   cursor: pointer;
+   column-count: 2;
+   border-radius: 5px;
+ }
+
+
+#age1 {
+  background-color:#47d147;
+  color: white;
+  border: 0px solid #47d147;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 22px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+#food {
+  font-size: 22px;
+  border-radius: 5px;
+  padding: 5px;
+  width:85px;
+  cursor: pointer;
+  color:#47d147;
+}
+
+#food2 {
+  background-color: #4dff4d;
+  font-size: 22px;
+}
+
+#submit2 {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #47d147;
+  font-size: 25px;
+  border-radius: 0px solid #47d147;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+}
+
+#resulta {
+  background-color: white;
+  color:#47d147;
+  width: 75px;
+}
+
+#bmi {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #47d147;
+  font-size: 25px;
+  border-radius: 0px solid #47d147;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#list {
+  font-size: 20px;
 }
