@@ -5,18 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>BMI calculator</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="../style/styles.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
 
 </head>
 
-<body background="images/fit.jpg" class="fitness">
+<body background="../images/fit.jpg" class="fitness">
     <header>
         <div class="topnav d">
-            <a href="index.html">Home</a>
-            <a href="calculator.html"> BMI</a>
-            <a href="calculator3.html"> Ideal weight</a>
-            <a href="chart.html"> Chart </a>
+            <a href="../index.html">Home</a>
+            <a href="../pages/calculator.html"> BMI</a>
+            <a href="../pages/calculator3.html"> Ideal weight</a>
+            <a href="../pages/chart.html"> Chart </a>
         </div>
     </header>
 
@@ -34,7 +34,7 @@
                     Overweight = 25–29.9 <br>
                     Obesity = BMI of 30 or greater </p>
 
-                <p> <a class="bmi3" href="chart.html"> Check out your BMI here! </a> </p>
+                <p> <a class="bmi3" href="../pages/chart.html"> Check out your BMI here! </a> </p>
             </div>
             <div id="col2">
                 <label class="label1">Your BMI</label> <br>
@@ -43,18 +43,18 @@
                         <option>Kg-Meters</option>
                     </select> </p><br>
                 <h3 class="green"> Weight: </h3>
-                <label class="peso">Pounds</label><input id="weight" type="text"><br>
+                <label id="peso1" class="peso">Pounds</label><input id="weight" type="text"><br>
                 <h3 class="green"> Height: </h3>
-                <label class="peso">Feet(s)</label><input id="height" type="text">
-                <label class="peso">Inch(es)</label><input id="height2" type="text"><br>
+                <label id="altura" class="peso">Feet(s)</label><input id="height" type="text">
+                <label id="altura2" class="peso">Inch(es)</label><input id="height2" type="text"><br>
                 <label>Your BMI</label>
                 <p id="result"></p><br>
                 <button id="bmi">Calculate BMI</button>
             </div>
         </div>
     </section>
-    <script src="js/jquery-3.3.1.min.js"> </script>
-    <script src="js/main.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"> </script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

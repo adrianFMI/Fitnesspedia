@@ -28,11 +28,11 @@ $(document).ready(function () {
     $("#unit").change(function () { //Change the value of  metric units in thelabels for BMI
         var unit = $("#unit").val();
         if (unit === "Pound-Feet") {
-            $("#peso").html("Pounds");
+            $("#peso1").html("Pounds");
             $("#altura").html("Feet(s)");
             $("#altura2").html("Inch(es)");
         } else if (unit === "Kg-Meters") {
-            $("#peso").html("Kilograms");
+            $("#peso1").html("Kilograms");
             $("#altura").html("Meter(s)");
             $("#altura2").html("Centimer(s)");
         }
