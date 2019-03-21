@@ -226,5 +226,4 @@ $(document).ready(function () {
             }
         }
     });
-    //reset button
 });
